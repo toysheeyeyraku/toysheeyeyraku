@@ -1,4 +1,4 @@
-package org.toysheeyeyraku;
+package org.toysheeyeyraku.controllers;
 
 import java.security.Principal;
 

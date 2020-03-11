@@ -1,4 +1,4 @@
-package org.toysheeyeyraku;
+package org.toysheeyeyraku.models;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import lombok.Data;
 
@@ -22,6 +24,17 @@ public class User implements UserDetails {
 	private boolean  isEnabled;
 	private ArrayList<GrantedAuthority> authorities;
 	private ArrayList<Role> roles;
-	
+	public static User createDefaultUser(String username,String password,PasswordEncoder encoder) {
+		User us =new User();
+		us.setAuthorities(new ArrayList<GrantedAuthority>());
+		us.setRoles(new ArrayList<Role>());
+		us.setUsername(username);
+		us.setPassword(encoder.encode(password));
+		us.setAccountNonExpired(true);
+		us.setAccountNonLocked(true);
+		us.setEnabled(true);
+		us.setCredentialsNonExpired(true);
+		return us;
+	}
 
 }

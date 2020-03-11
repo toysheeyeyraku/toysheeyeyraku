@@ -32,7 +32,11 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
 				in</button>
 		</form>
-		<a href="http://176.105.170.194:8081/register/form">Registration</a>
+		<a href="http://localhost:8081/register/form">Registration</a>
+		<a href="http://localhost:8081/logout">Logout</a>
+		<a href="oauth2/authorize-client/google" class="list-group-item active">Google</a>
+		<a href="oauth2/authorize-client/facebook" class="list-group-item active">Facebook</a>
+		
 	</div>
 </body>
 </html>
