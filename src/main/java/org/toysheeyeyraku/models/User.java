@@ -3,6 +3,8 @@ package org.toysheeyeyraku.models;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +17,8 @@ import lombok.Data;
 @Data
 @Document("Credentials")
 public class User implements UserDetails {
-	
+	@Id
+	private ObjectId id;
 	private String password;
 	private String username;
 	private boolean isAccountNonExpired;
