@@ -40,14 +40,15 @@ public class RegisterController {
 	@PostMapping("/registerme")
 	public String e(@RequestParam("password") String password, @RequestParam("username") String username,
 			HttpServletRequest request) throws Exception {
-		if (repository.findByUsername(username) != null) {
-			throw new Exception("Already registered");
+		if (repository.findByUsername(username) == null) {
+			User us = User.createDefaultUser(username, password, encoder);
+			repository.save(us);
+			loginService.authenticateUserAndSetSession(us.getUsername(), request,password);
+			return "redirect:../creation";
 		}
 		
-		User us = User.createDefaultUser(username, password, encoder);
-		repository.save(us);
-		loginService.authenticateUserAndSetSession(us.getUsername(), request,password);
-		return "redirect:/q";
+		
+		return "register";
 	}
 
 	@Autowired

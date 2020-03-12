@@ -79,7 +79,7 @@ public class LoginController {
 			loginService.authenticateUserAndSetSession(us.getUsername(), request,password );
 		}
 
-		return "loginSuccess";
+		return "redirect:/creation";
 	}
 	@Autowired
 	private DynamicLoginService loginService;

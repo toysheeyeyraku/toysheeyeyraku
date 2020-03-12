@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>org</groupId>
 	<artifactId>toysheeyeyraku</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>Spring Boot Web JSP Example</name>
 	<description>Spring Boot Web JSP Example</description>
 

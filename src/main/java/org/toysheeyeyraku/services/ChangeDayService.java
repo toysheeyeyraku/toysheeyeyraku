@@ -14,7 +14,7 @@ public class ChangeDayService {
 	private ScheduleService scheduleService;
 	@Scheduled(fixedRate = 50000)
 	public void checkDate() {
-		if (date.equals(LocalDate.now())) {
+		if (!date.equals(LocalDate.now())) {
 			scheduleService.dayChanged();
 			date=LocalDate.now();
 			

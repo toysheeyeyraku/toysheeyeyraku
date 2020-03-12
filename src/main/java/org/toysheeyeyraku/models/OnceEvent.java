@@ -14,4 +14,6 @@ public class OnceEvent {
 	private ObjectId id;
 	private LocalDateTime currentDate;
 	private boolean sended;
+	private String description;
+	private String name;
 }

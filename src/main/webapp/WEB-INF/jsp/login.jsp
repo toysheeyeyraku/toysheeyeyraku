@@ -1,42 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Please sign in</title>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-	crossorigin="anonymous">
-<link
-	href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css"
-	rel="stylesheet" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e7ae4e2f8f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container">
-		<form class="form-signin" method="post" action="/login">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			<p>
-				<label for="username" class="sr-only">Username</label> <input
-					type="text" id="username" name="username" class="form-control"
-					placeholder="Username" required="" autofocus="">
-			</p>
-			<p>
-				<label for="password" class="sr-only">Password</label> <input
-					type="password" id="password" name="password" class="form-control"
-					placeholder="Password" required="">
-			</p>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in</button>
-		</form>
-		<a href="http://localhost:8081/register/form">Registration</a>
-		<a href="http://localhost:8081/logout">Logout</a>
-		<a href="oauth2/authorize-client/google" class="list-group-item active">Google</a>
-		<a href="oauth2/authorize-client/facebook" class="list-group-item active">Facebook</a>
-		
-	</div>
+    
+   <form class="box" action="login" method='post'>
+        <img src="/imgs/logo.jpg" class="form__logo" alt="">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <div class="social">
+           <a href="oauth2/authorize-client/facebook" class="social"><i class="fab fa-facebook-f"></i></a>
+           <a href="oauth2/authorize-client/google" class="social"><i class="fab fa-google-plus-g"></i></a>
+        </div>
+        <input type="submit" name="" value="Login">
+        <a href="http://localhost:8081/register/form" class="sign__up">Sign up</a>
+    </form>
 </body>
 </html>

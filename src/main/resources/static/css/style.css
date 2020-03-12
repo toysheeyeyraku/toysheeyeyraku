@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.box{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    text-align: center;
+}
+
+::placeholder{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.form__logo{
+    text-align: center;
+    width: 70%;
+    height: 70%;
+}
+
+.box input[type = "text"],.box input[type = "password"]{
+    border: 0;
+    font-size: 17px;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #efefef;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #333333;
+    border-radius: 24px;
+    transition: 0.25s;
+    box-shadow: 0px -2px 5px -3px grey;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+    width: 280px;
+    border-color: #c06ef3;
+}
+
+.box input[type = 'submit']{
+    border: 0;
+    background: none;
+    font-size: 17px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #efefef;
+    padding: 14px 40px;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    background:linear-gradient(to bottom, #8371f0, #c06ef3);
+    color: #fff;
+    border-radius: 24px;
+    transition: 1s;
+    cursor: pointer;
+    box-shadow: 0px -2px 5px -3px grey;
+}
+
+.box input[type = 'submit']:hover{
+   background: #8f70f1;
+    transition: background 1s linear;
+}
+
+.social{
+    margin: 20px 0;
+}
+
+.social a{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    background: #cfc0f9;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.social a:hover{
+    background: #8371f0;
+    transition: 1s;
+}
+
+.sign__up{
+    color: #c06ef3;
+    text-decoration: none;
+}

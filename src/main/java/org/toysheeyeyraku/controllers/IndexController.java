@@ -17,11 +17,18 @@ public class IndexController {
 	private TelegramSettingsRepository rep;
 	@Autowired
 	private UserRepository userRep;
-	@GetMapping("index")
+	@GetMapping("/")
 	public String getIndex(Model m,Principal p) {
 		User user=userRep.findByUsername(p.getName());
 		TelegramSettings set=rep.findByUserId(user.getId());
+		if (set==null) {
+			set=new TelegramSettings();
+			set.setRegisterString(user.getId().toString());
+			set.setUserId(user.getId());
+			rep.save(set);
+		}
 		m.addAttribute("message",set.getRegisterString());
+		m.addAttribute("user", user.getUsername());
 		return "index";
 	}
 }

@@ -37,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/register/**", "/login").permitAll().anyRequest().authenticated().and()
+		http.authorizeRequests().antMatchers("/register/**", "/resources/**", "/static/**", "/css/**", "/js/**", "/img/**", "/icon/**","/imgs/**").permitAll().anyRequest().authenticated().and()
 
-				.formLogin().loginPage("/login").permitAll().and().oauth2Login().loginPage("/oauth_login")
+				.formLogin().loginPage("/login").defaultSuccessUrl("/creation", true).permitAll().and().oauth2Login().loginPage("/oauth_login")
 				.authorizationEndpoint().baseUri("/oauth2/authorize-client")
 				.authorizationRequestRepository(authorizationRequestRepository()).and().tokenEndpoint()
 				.accessTokenResponseClient(accessTokenResponseClient()).and().defaultSuccessUrl("/loginSuccess", true)
